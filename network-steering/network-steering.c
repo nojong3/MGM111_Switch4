@@ -266,8 +266,6 @@ void tryToJoinNetwork(void)
   EmberStatus status;
   EmberNodeType nodeType;
 
-  emberAfCorePrintln("in tryToJoinNetwork");
-
   MEMSET(&networkParams, 0, sizeof(EmberNetworkParameters));
 
   networkParams.panId = getNextCandidate();
@@ -329,7 +327,6 @@ static void networkFoundCallback(EmberZigbeeNetwork *networkFound,
                                  uint8_t lqi,
                                  int8_t rssi)
 {
-  emberAfCorePrintln("networkFoundCallback start");
   emAfPluginNetworkSteeringTotalBeacons++;
 
   if (!(networkFound->allowingJoin
@@ -368,13 +365,10 @@ static void networkFoundCallback(EmberZigbeeNetwork *networkFound,
     return;
   }
 
-  emberAfCorePrintln("networkFoundCallback ending");
-
 }
 
 HIDDEN void scanResultsHandler(EmberAfPluginScanDispatchScanResults *results)
 {
-	emberAfCorePrintln("scanResultsHandler");
   if (emberAfPluginScanDispatchScanResultsAreComplete(results)
       || emberAfPluginScanDispatchScanResultsAreFailure(results)) {
     scanCompleteCallback(results->channel, results->status);
@@ -460,7 +454,6 @@ static EmberStatus stateMachineRun(void)
       break;
   }
 
-  emberAfCorePrintln("Channel Mask: 0x%4X", currentChannelMask);
   gotoNextChannel();
   return status;
 }
@@ -515,7 +508,6 @@ static EmberStatus setupSecurity(void)
 
 EmberStatus emberAfPluginNetworkSteeringStart(void)
 {
-  emberAfCorePrintln("Start in emberAfPluginNetworkSteeringStart");
   EmberStatus status = EMBER_INVALID_CALL;
 
   if (emAfProIsCurrentNetwork()

@@ -17,6 +17,7 @@ C_DEPS :=
 SUBDIRS := \
 . \
 adc/EFR32 \
+address-table \
 antenna-stub \
 basic \
 concentrator \

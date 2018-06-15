@@ -69,6 +69,26 @@
 			<locationURI>STUDIO_SDK_LOC/app/builder/MGM111_Switch4/afv2-token.h</locationURI>
 		</link>
 		<link>
+			<name>brd4300b_efr32mg1p132f256gm48_2.hwconf</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/app/builder/MGM111_Switch3/brd4300b_efr32mg1p132f256gm48.hwconf</locationURI>
+		</link>
+		<link>
+			<name>address-table/address-table-cli.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/address-table/address-table-cli.c</locationURI>
+		</link>
+		<link>
+			<name>address-table/address-table.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/address-table/address-table.c</locationURI>
+		</link>
+		<link>
+			<name>emdrv/spidrv.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/spidrv/src/spidrv.c</locationURI>
+		</link>
+		<link>
 			<name>hal-config/hal-config.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/app/builder/MGM111_Switch4/hal-config/hal-config.h</locationURI>

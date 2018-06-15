@@ -159,7 +159,7 @@ int emberAfMain(MAIN_FUNCTION_PARAMETERS)
     // error visually for example. This app asserts.
     assert(false);
   } else {
-    emberAfDebugPrintln("init pass");
+    emberAfDebugPrintln("initiation pass");
   }
 
 #if defined(EMBER_ENABLE_EM4)

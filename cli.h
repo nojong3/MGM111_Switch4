@@ -866,6 +866,47 @@
 
 /** @} */ // end group on-off
 
+/** @addtogroup plugin-address-table Plugin Commands: Address Table
+ * @ingroup cli
+ * This plugin provides a set of APIs and CLI commands for managing the address
+ * table
+ * 
+ * @{
+ */
+
+/** @brief <b>plugin address-table add [entry:8] </b>
+ *   - <i>Add an entry to the address table.</i>
+ *     - entry - IEEE_ADDRESS - Entry to be added.
+ */
+#define EMBER_AF_DOXYGEN_CLI_COMMAND_PLUGIN_ADDRESS_TABLE_PLUGIN_ADDRESS_TABLE_ADD
+
+/** @brief <b>plugin address-table lookup [entry:8] </b>
+ *   - <i>Lookup an entry in the address table.</i>
+ *     - entry - IEEE_ADDRESS - Entry to be looked up.
+ */
+#define EMBER_AF_DOXYGEN_CLI_COMMAND_PLUGIN_ADDRESS_TABLE_PLUGIN_ADDRESS_TABLE_LOOKUP
+
+/** @brief <b>plugin address-table print </b>
+ *   - <i>Prints the address table.</i>
+ */
+#define EMBER_AF_DOXYGEN_CLI_COMMAND_PLUGIN_ADDRESS_TABLE_PLUGIN_ADDRESS_TABLE_PRINT
+
+/** @brief <b>plugin address-table remove [entry:8] </b>
+ *   - <i>Remove an entry from the address table.</i>
+ *     - entry - IEEE_ADDRESS - Entry to be removed.
+ */
+#define EMBER_AF_DOXYGEN_CLI_COMMAND_PLUGIN_ADDRESS_TABLE_PLUGIN_ADDRESS_TABLE_REMOVE
+
+/** @brief <b>plugin address-table set [index:1] [eui64:8] [nodeId:2] </b>
+ *   - <i>Set an entry in the address table according to the arguments specified</i>
+ *     - index - INT8U
+ *     - eui64 - IEEE_ADDRESS
+ *     - nodeId - INT16U
+ */
+#define EMBER_AF_DOXYGEN_CLI_COMMAND_PLUGIN_ADDRESS_TABLE_PLUGIN_ADDRESS_TABLE_SET
+
+/** @} */ // end group plugin-address-table
+
 /** @addtogroup plugin-concentrator Plugin Commands: Concentrator
  * @ingroup cli
  * The Concentrator plugin contributes several CLI commands to the application
@@ -1317,6 +1358,16 @@
 #define EMBER_AF_DOXYGEN_CLI_COMMAND_ON/OFF_ONTIMEDOFF
 
 /** @} */ // end group on-off
+
+/** @addtogroup plugin-address-table Plugin Commands: Address Table
+ * @ingroup cli
+ * This plugin provides a set of APIs and CLI commands for managing the address
+ * table
+ * 
+ * @{
+ */
+
+/** @} */ // end group plugin-address-table
 
 /** @addtogroup plugin-concentrator Plugin Commands: Concentrator
  * @ingroup cli

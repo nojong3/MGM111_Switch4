@@ -287,6 +287,7 @@ lastArchitectureId=efr32~family[M]~series[1]~device_configuration[1]~performance
 featureLevel=1
 active=true
 lastHwConfFileUsed=PATH(STACK_RELATIVE):app/builder/MGM111_Switch4/brd4300b_efr32mg1p132f256gm48.hwconf
+customHwConfFile(efr32~family[M]~series[1]~device_configuration[1]~performance[P]~radio[132]~flash[256K]~temp[G]~package[M]~pins[48]+BRD4300B+gcc)=false,PATH(ABSOLUTE):D:\SiliconLabs\SimplicityStudio\v4\developer\sdks\gecko_sdk_suite\v2.2\app\builder\MGM111_Switch3\brd4300b_efr32mg1p132f256gm48.hwconf
 }
 {setupId:information
 \{key:description
@@ -398,7 +399,7 @@ CliCommandSet:Full
 #  Plugin configuration
 appPlugin:adc,true
 
-appPlugin:address-table,false
+appPlugin:address-table,true
 
 appPlugin:aes-cmac,false
 

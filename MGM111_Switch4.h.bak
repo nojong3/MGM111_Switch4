@@ -40,7 +40,7 @@
 #define EMBER_AF_GENERATE_CLI
 
 /**** Security Section ****/
-#define EMBER_AF_HAS_SECURITY_PROFILE_HA
+#define EMBER_AF_HAS_SECURITY_PROFILE_NONE
 
 /**** Network Section ****/
 #define EMBER_SUPPORTED_NETWORKS (1)

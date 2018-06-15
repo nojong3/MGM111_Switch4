@@ -104,6 +104,8 @@ SOURCE_FILES = \
   ../../../platform/emdrv/uartdrv/src/uartdrv.c \
  \
 ../../../platform\base\hal\plugin\adc\adc-efr32.c \
+../../../protocol\zigbee\app\framework\plugin\address-table\address-table.c \
+../../../protocol\zigbee\app\framework\plugin\address-table\address-table-cli.c \
 ../../../platform\base\hal\plugin\antenna-stub\antenna-stub.c \
 ../../../protocol\zigbee\app\framework\plugin\basic\basic.c \
 ../../../protocol\zigbee\app\framework\plugin\concentrator\concentrator-support.c \
@@ -269,11 +271,11 @@ CINC = -I./ \
 -I../../../hardware/kit/common/bsp \
   -I../../../platform/bootloader \
   -Ihal-config \
-  -I../../../platform/radio/rail_lib/protocol/ieee802154 \
-  -I../../../platform/radio/rail_lib/protocol/ble \
   -I../../../platform/radio/rail_lib/common \
   -I../../../platform/radio/rail_lib/chip/efr32/rf/common/cortex \
   -I../../../platform/radio/rail_lib/chip/efr32 \
+  -I../../../platform/radio/rail_lib/protocol/ieee802154 \
+  -I../../../platform/radio/rail_lib/protocol/ble \
  \
 
 TARGET = MGM111_Switch4

@@ -203,11 +203,13 @@ PGM EmberAfGenericClusterFunction emberAfFuncArrayIdentifyClusterServer[] = { (E
 
 
 #define EMBER_AF_GENERATED_PLUGIN_NCP_INIT_FUNCTION_DECLARATIONS \
+  void emberAfPluginAddressTableNcpInitCallback(bool memoryAllocation); \
   void emberAfPluginConcentratorNcpInitCallback(bool memoryAllocation); \
   void emberAfPluginInterpanNcpInitCallback(bool memoryAllocation); \
 
 
 #define EMBER_AF_GENERATED_PLUGIN_NCP_INIT_FUNCTION_CALLS \
+  emberAfPluginAddressTableNcpInitCallback(memoryAllocation); \
   emberAfPluginConcentratorNcpInitCallback(memoryAllocation); \
   emberAfPluginInterpanNcpInitCallback(memoryAllocation); \
 

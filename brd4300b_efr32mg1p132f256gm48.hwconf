@@ -43,6 +43,8 @@
     <property object="LEUART0" propertyId="LEUART.showadvanced.BOOL" value="1"/>
     <property object="PA" propertyId="ABPeripheral.included" value="true"/>
     <property object="PA" propertyId="PA.BSP_PA_VOLTAGE.INT" value="1800"/>
+    <property object="PORTIO" propertyId="portio.acmp0.location.acmp0_neg_dy" value="8"/>
+    <property object="PORTIO" propertyId="portio.acmp0.location.acmp0_outloc" value="5"/>
     <property object="PORTIO" propertyId="portio.i2c0.enable.scl" value="Enabled"/>
     <property object="PORTIO" propertyId="portio.i2c0.enable.sda" value="Enabled"/>
     <property object="PORTIO" propertyId="portio.i2c0.location.i2c0_sclloc" value="15"/>
@@ -99,6 +101,7 @@
     <property object="USART0" propertyId="USART.HAL_USART_RX_QUEUE_SIZE.INT" value="128"/>
     <property object="USART0" propertyId="USART.HAL_USART_TX_QUEUE_SIZE.INT" value="128"/>
     <property object="USART0" propertyId="USART.showadvanced.BOOL" value="1"/>
+    <property object="USART1" propertyId="ABPeripheral.included" value="true"/>
     <property object="USART1" propertyId="USART.BSP_USART_CLK.PIN" value="PC8"/>
     <property object="USART1" propertyId="USART.BSP_USART_CS.PIN" value="PC9"/>
     <property object="USART1" propertyId="USART.BSP_USART_MISO.PIN" value="PC7"/>

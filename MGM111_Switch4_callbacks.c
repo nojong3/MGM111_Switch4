@@ -11,6 +11,7 @@
 #include EMBER_AF_API_FIND_AND_BIND_INITIATOR
 
 #define SWITCH_ENDPOINT (1)
+#define COORDINATOR_ADDRESS 0x0000
 
 static bool commissioning = false;
 
@@ -27,6 +28,7 @@ void commissioningEventHandler(void)
 
   if (emberAfNetworkState() == EMBER_JOINED_NETWORK) {
     emberAfGetCommandApsFrame()->sourceEndpoint = SWITCH_ENDPOINT;
+    emberAfGetCommandApsFrame()->destinationEndpoint = 0xe8;
     if (lastButton == BUTTON0) {
       emberAfCorePrintln("button 0");
       emberAfFillCommandOnOffClusterToggle();
@@ -35,8 +37,10 @@ void commissioningEventHandler(void)
       uint8_t nextLevel = (uint8_t)(0xFF & halCommonGetRandom());
       emberAfFillCommandLevelControlClusterMoveToLevel(nextLevel, TRANSITION_TIME_DS, 0, 0);
     }
-    status = emberAfSendCommandUnicastToBindings();
-    emberAfCorePrintln("%p: 0x%X", "Send to bindings", status);
+//    status = emberAfSendCommandUnicastToBindings();
+    status = emberAfSendCommandUnicast(EMBER_OUTGOING_DIRECT, COORDINATOR_ADDRESS);
+//    status = emberAfSendCommandBroadcast(EMBER_SLEEPY_BROADCAST_ADDRESS);
+    emberAfCorePrintln("%p: 0x%X", "Send to coordinator", status);
   } else {
     bool touchlink = (lastButton == BUTTON1);
     status = emberAfPluginNetworkSteeringStart();

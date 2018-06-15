@@ -27,6 +27,11 @@ void emAfInterpanEnableCommand(void);
 void emAfInterpanFragmentTestCommand(void);
 void emAfInterpanSetMessageTimeoutCommand(void);
 void emAfPluginIdentifyCliPrint(void);
+void emberAfPluginAddressTableAddCommand(void);
+void emberAfPluginAddressTableLookupCommand(void);
+void emberAfPluginAddressTablePrintCommand(void);
+void emberAfPluginAddressTableRemoveCommand(void);
+void emberAfPluginAddressTableSetCommand(void);
 void emberAfPluginConcentratorAggregationCommand(void);
 void emberAfPluginConcentratorPrintHostSourceRouteTable(void);
 void emberAfPluginConcentratorPrintSourceRouteTable(void);
@@ -886,7 +891,47 @@ static EmberCommandEntry emberCommandTablePluginConcentratorCommands[] = {
   emberCommandEntryTerminator()
 };
 
+#if defined(EMBER_COMMAND_INTEPRETER_HAS_DESCRIPTION_FIELD)
+static PGM_P PGM emberCommandTablePluginAddressTableAddCommandArguments[] = {
+  "Entry to be added.",
+  NULL
+};
+#endif
+
+#if defined(EMBER_COMMAND_INTEPRETER_HAS_DESCRIPTION_FIELD)
+static PGM_P PGM emberCommandTablePluginAddressTableLookupCommandArguments[] = {
+  "Entry to be looked up.",
+  NULL
+};
+#endif
+
+#if defined(EMBER_COMMAND_INTEPRETER_HAS_DESCRIPTION_FIELD)
+static PGM_P PGM emberCommandTablePluginAddressTableRemoveCommandArguments[] = {
+  "Entry to be removed.",
+  NULL
+};
+#endif
+
+#if defined(EMBER_COMMAND_INTEPRETER_HAS_DESCRIPTION_FIELD)
+static PGM_P PGM emberCommandTablePluginAddressTableSetCommandArguments[] = {
+  "index",
+  "eui64",
+  "node id",
+  NULL
+};
+#endif
+
+static EmberCommandEntry emberCommandTablePluginAddressTableCommands[] = {
+  emberCommandEntryActionWithDetails("add", emberAfPluginAddressTableAddCommand, "b", "Add an entry to the address table.", emberCommandTablePluginAddressTableAddCommandArguments),
+  emberCommandEntryActionWithDetails("lookup", emberAfPluginAddressTableLookupCommand, "b", "Lookup an entry in the address table.", emberCommandTablePluginAddressTableLookupCommandArguments),
+  emberCommandEntryActionWithDetails("print", emberAfPluginAddressTablePrintCommand, "", "Prints the address table.", NULL),
+  emberCommandEntryActionWithDetails("remove", emberAfPluginAddressTableRemoveCommand, "b", "Remove an entry from the address table.", emberCommandTablePluginAddressTableRemoveCommandArguments),
+  emberCommandEntryActionWithDetails("set", emberAfPluginAddressTableSetCommand, "ubv", "Set an entry in the address table according to the arguments specified", emberCommandTablePluginAddressTableSetCommandArguments),
+  emberCommandEntryTerminator()
+};
+
 static EmberCommandEntry emberCommandTablePluginCommands[] = {
+  emberCommandEntrySubMenu("address-table", emberCommandTablePluginAddressTableCommands, ""),
   emberCommandEntrySubMenu("concentrator", emberCommandTablePluginConcentratorCommands, ""),
   emberCommandEntrySubMenu("counter", emberCommandTablePluginCounterCommands, ""),
   emberCommandEntrySubMenu("counters", emberCommandTablePluginCountersCommands, ""),

@@ -64,7 +64,7 @@ PGM EmberAfGenericClusterFunction emberAfFuncArrayIdentifyClusterServer[] = { (E
   { \
     /* Primary */ \
     ZA_COORDINATOR, \
-    EMBER_AF_SECURITY_PROFILE_HA, \
+    EMBER_AF_SECURITY_PROFILE_NONE, \
   }, \
 }
 #define EM_AF_GENERATED_NETWORK_STRINGS  \
@@ -205,11 +205,13 @@ PGM EmberAfGenericClusterFunction emberAfFuncArrayIdentifyClusterServer[] = { (E
 #define EMBER_AF_GENERATED_PLUGIN_NCP_INIT_FUNCTION_DECLARATIONS \
   void emberAfPluginConcentratorNcpInitCallback(bool memoryAllocation); \
   void emberAfPluginInterpanNcpInitCallback(bool memoryAllocation); \
+  void emberAfPluginAddressTableNcpInitCallback(bool memoryAllocation); \
 
 
 #define EMBER_AF_GENERATED_PLUGIN_NCP_INIT_FUNCTION_CALLS \
   emberAfPluginConcentratorNcpInitCallback(memoryAllocation); \
   emberAfPluginInterpanNcpInitCallback(memoryAllocation); \
+  emberAfPluginAddressTableNcpInitCallback(memoryAllocation); \
 
 
 #define EMBER_AF_GENERATED_PLUGIN_STACK_STATUS_FUNCTION_DECLARATIONS \

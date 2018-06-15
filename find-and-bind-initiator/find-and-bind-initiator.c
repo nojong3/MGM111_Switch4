@@ -247,7 +247,7 @@ static EmberStatus broadcastIdentifyQuery(void)
   status // BDB wants 0xFFFF
     = emberAfSendCommandBroadcast(EMBER_SLEEPY_BROADCAST_ADDRESS);
 
-  debugPrintln("%p: %p: 0x%X",
+  emberAfCorePrintln("%p: %p: 0x%X",
                EMBER_AF_PLUGIN_FIND_AND_BIND_INITIATOR_PLUGIN_NAME,
                "Broadcast",
                status);

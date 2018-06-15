@@ -139,6 +139,7 @@ static EmberAfStatus writeIdentifyTime(uint8_t endpoint, uint16_t identifyTime)
 
 static EmberStatus scheduleIdentifyTick(uint8_t endpoint)
 {
+	emberAfCorePrintln("scheduleIdentifyTick");
   EmberAfStatus status;
   EmAfIdentifyState *state = getIdentifyState(endpoint);
   uint16_t identifyTime;

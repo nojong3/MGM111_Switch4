@@ -101,9 +101,12 @@ SOURCE_FILES = \
   ../../../platform/base/hal/plugin/serial/cortexm/efm32/com.c \
   ../../../platform/bootloader/api/btl_interface.c \
   ../../../platform/bootloader/api/btl_interface_storage.c \
+  ../../../platform/emdrv/spidrv/src/spidrv.c \
   ../../../platform/emdrv/uartdrv/src/uartdrv.c \
  \
 ../../../platform\base\hal\plugin\adc\adc-efr32.c \
+../../../protocol\zigbee\app\framework\plugin\address-table\address-table.c \
+../../../protocol\zigbee\app\framework\plugin\address-table\address-table-cli.c \
 ../../../platform\base\hal\plugin\antenna-stub\antenna-stub.c \
 ../../../protocol\zigbee\app\framework\plugin\basic\basic.c \
 ../../../protocol\zigbee\app\framework\plugin\concentrator\concentrator-support.c \

@@ -58,6 +58,9 @@ void emberAfPrintStatus(void);
 void enableDisableEndpoint(void);
 void endpointPrint(void);
 void findJoinableNetworkCommand(void);
+void findMaskCommand(void);
+void findModeCommand(void);
+void findPrintCommand(void);
 void findUnusedPanIdCommand(void);
 #if !defined(EMBER_AF_HAS_SECURITY_PROFILE_NONE)
 void getSetMfgToken(void);
@@ -1002,8 +1005,26 @@ static EmberCommandEntry emberCommandTableOptionCommands[] = {
   emberCommandEntryTerminator()
 };
 
+#if defined(EMBER_COMMAND_INTEPRETER_HAS_DESCRIPTION_FIELD)
+static PGM_P PGM emberCommandTableNetworkFindMaskCommandArguments[] = {
+  "channel page (0 and 28-31, if sub-GHz support is included)",
+  "channel mask",
+  NULL
+};
+#endif
+
+#if defined(EMBER_COMMAND_INTEPRETER_HAS_DESCRIPTION_FIELD)
+static PGM_P PGM emberCommandTableNetworkFindModeCommandArguments[] = {
+  "Bit 0 = enable 2.4GHz, Bit 1 = enable sub-GHz",
+  NULL
+};
+#endif
+
 static EmberCommandEntry emberCommandTableNetworkFindCommands[] = {
   emberCommandEntryActionWithDetails("joinable", findJoinableNetworkCommand, "", "Begin a search for a joinable networ ...", NULL),
+  emberCommandEntryActionWithDetails("mask", findMaskCommand, "uw", "Set a channel mask for a given channel page for 'find joinable' and 'f ...", emberCommandTableNetworkFindMaskCommandArguments),
+  emberCommandEntryActionWithDetails("mode", findModeCommand, "u", "Set a search mode for 'find joinable' and 'find unused'.", emberCommandTableNetworkFindModeCommandArguments),
+  emberCommandEntryActionWithDetails("print", findPrintCommand, "", "Print network search parameters (mode and channel masks).", NULL),
   emberCommandEntryActionWithDetails("unused", findUnusedPanIdCommand, "", "Begin a search for an unused Channel and Pan I ...", NULL),
   emberCommandEntryTerminator()
 };
